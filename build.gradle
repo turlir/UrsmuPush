@@ -1,0 +1,45 @@
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+
+def spring_version = "3.0.5.RELEASE"
+def jackson_version = "1.7.4"
+def junit_version = "4.11"
+
+dependencies {
+    runtime 'javax.servlet:jstl:1.1.2'
+
+
+    providedCompile 'javax.servlet:servlet-api:2.5'
+    providedCompile 'javax.servlet.jsp:jsp-api:2.1'
+
+
+    compile 'org.codehaus.jackson:jackson-mapper-asl:' + jackson_version
+    compile 'org.codehaus.jackson:jackson-core-asl:' + jackson_version
+
+    compile 'org.hibernate:hibernate-core:3.3.2.GA'
+    compile 'org.hibernate:hibernate-annotations:3.3.1.GA'
+    compile 'org.hibernate:hibernate-validator:4.2.0.Final'
+
+    compile 'org.springframework:spring-webmvc:' + spring_version
+    compile 'org.springframework:spring-orm:' + spring_version
+    compile 'org.springframework:spring-core:' + spring_version
+    compile 'org.springframework:spring-web:' + spring_version
+    compile 'org.springframework:spring-tx:' + spring_version
+    compile 'org.springframework.security:spring-security-web:' + spring_version
+    compile 'org.springframework.security:spring-security-config:' + spring_version
+    compile 'org.springframework.security:spring-security-core:' + spring_version
+    compile 'javax.persistence:persistence-api:1.0'
+    compile 'javax.transaction:jta:1.1'
+    compile 'taglibs:standard:1.1.2'
+    compile 'org.xerial:sqlite-jdbc:3.7.2'
+
+
+    testCompile 'org.springframework:spring-test:' + spring_version
+    testCompile 'commons-dbcp:commons-dbcp:1.2.2'
+    testCompile 'org.slf4j:slf4j-log4j12:1.6.1'
+    testCompile 'javassist:javassist:3.12.1.GA'
+    testCompile group: 'junit', name: 'junit', version: junit_version
+}
