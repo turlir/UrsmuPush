@@ -1,31 +1,23 @@
-package ru.push.backend;
+package ru.push.backend.models;
 
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "users")
+@Table(name = "my_super_table")
 public class RegisteredDevice {
 
     @Id
     @Column(name = "pushId", unique = true)
-    @NotNull
-    @Length(min = 1)
     private String pushId;
 
     @Column(name = "faculty")
-    @NotNull
-    @Length(min = 1)
     private String faculty;
 
     @Column(name = "groupName")
-    @NotNull
-    @Length(min = 1)
     private String groupName;
 
     @Column(name = "dataTime")
